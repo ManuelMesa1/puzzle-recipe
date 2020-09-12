@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const recipeSchema = new mongoose.Schema({
     name: {
@@ -13,14 +13,14 @@ const recipeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    category: [{
+    category: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category'
-    }],
-    user: [{
+    },
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    }]
+    }
 }, {
     timestamp: true
 })

@@ -2,8 +2,8 @@ const { gql } = require('apollo-server-express')
 
 module.exports = gql `
 extend type Query{
-categories(cursor: String, limit: Int): CategoryFeed!
-category(id: ID!): Category
+getCategories(cursor: String, limit: Int): CategoryFeed!
+getOneCategory(id: ID!): Category
 }
 
 type CategoryFeed{
@@ -33,5 +33,6 @@ input updateCategoryInput{
 type Category{
     id: ID!
     name: String!
+    user: User
 }
 `
